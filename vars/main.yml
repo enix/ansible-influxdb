@@ -1,2 +1,7 @@
 ---
-# vars file for roletemplate
+
+influxdb__group: influxdb
+influxdb__user: influxdb
+influxdb__generated_config:
+influxdb__influxd_bin: /usr/bin/influxd
+influxdb__config_file: /etc/influxdb/influxdb.conf

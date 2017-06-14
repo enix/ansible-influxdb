@@ -8,15 +8,41 @@
   file:
     path: "{{ item }}"
     state: directory
-    group: influxdb
-    owner: influxdb
+    group: "{{ influxdb__group }}"
+    owner: "{{ influxdb__user }}"
     mode: 0775
   with_items:
     - "{{ influxdb__data_dir }}"
     - "{{ influxdb__meta_dir }}"
     - "{{ influxdb__wal_dir }}"
 
+- name: Write config
+  template:
+    src: influxdb.conf.j2
+    dest: "{{ influxdb__config_file }}"
+    group: root
+    owner: root
+    mode: 0444
+    backup: yes
+  register: write_config
+  notify:
+    - restart influxdb
 
+### Does not seems really usefull
+## Taken from https://github.com/mtchavez/ansible-influxdb
+# - name: Run config update
+#   command: "{{ influxdb__influxd_bin }} config -config {{ influxdb__generated_config }}"
+#   register: influxdb_merged_config
+#   become: yes
+#   when: write_config | changed
+#
+# - name: Write merged config
+#   copy:
+#     content: "{{ influxdb_merged_config.stdout }}"
+#     dest: "{{ influxdb__config_file }}"
+#     group: "{{ influxdb__group }}"
+#     owner: "{{ influxdb__user }}"
+#   when: influxdb_merged_config | changed
 
 - name: "Enable and start influxdb service"
   service:
