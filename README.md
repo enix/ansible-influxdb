@@ -53,7 +53,9 @@ You can also use the role as a playbook. You will be asked which hosts to provis
 Still to do
 -----------
 
-- Write the role itself, for one
+- Add SSL certificates Support
+- Add collectd input configuration
+- Add credentials configuration
 
 
 Changelog
