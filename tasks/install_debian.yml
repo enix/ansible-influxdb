@@ -1,0 +1,6 @@
+---
+
+- name: "Debian: Install influxdb package"
+  apt:
+    name: influxdb
+    state: present

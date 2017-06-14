@@ -1,2 +1,5 @@
 ---
-# defaults file for $ROLE
+
+influxdb__data_dir: "/var/lib/influxdb/data"
+influxdb__meta_dir: "/var/lib/influxdb/meta"
+influxdb__wal_dir: "/var/lib/influxdb/wal"

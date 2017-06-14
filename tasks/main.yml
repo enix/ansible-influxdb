@@ -1,2 +1,25 @@
 ---
 # tasks file for influxdb
+
+- include: install_debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Create data and config directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    group: influxdb
+    owner: influxdb
+    mode: 0775
+  with_items:
+    - "{{ influxdb__data_dir }}"
+    - "{{ influxdb__meta_dir }}"
+    - "{{ influxdb__wal_dir }}"
+
+
+
+- name: "Enable and start influxdb service"
+  service:
+    name: influxdb
+    enabled: yes
+    state: started

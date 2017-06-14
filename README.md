@@ -19,7 +19,10 @@ Role Variables
 
 This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `influxdb__`.
 
-- `influxdb__` - desc
+- `influxdb__data_dir`: Directory to store data, `default: /var/lib/influxdb/data`
+- `influxdb__meta_dir`: Directory to store metadatas, `default: /var/lib/influxdb/meta`
+- `influxdb__wal_dir`: Directory to store WAL, `default: /var/lib/influxdb/wal`
+
 
 Dependencies
 ------------
