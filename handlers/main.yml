@@ -1,10 +1,7 @@
 ---
-# handlers file for $ROLE
 
-# - name: restart $service
-#   sudo: yes
-#   service: name=$service state=restarted
+ - name: restart influxdb
+   service: name=influxdb state=restarted
 
-# - name: reload $service
-#   sudo: yes
-#   service: name=$service state=reloaded
+ - name: reload influxdb
+   service: name=influxdb state=reloaded
