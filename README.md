@@ -192,6 +192,7 @@ Still to do
 - Add SSL certificates Support
 - Add collectd input configuration
 - Add credentials configuration
+- Add RedHat installation
 
 
 Changelog
