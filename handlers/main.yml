@@ -2,6 +2,10 @@
 
  - name: restart influxdb
    service: name=influxdb state=restarted
+   # Disable this when running inside docker
+   when: ansible_virtualization_type != 'docker'
 
  - name: reload influxdb
    service: name=influxdb state=reloaded
+   # Disable this when running inside docker
+   when: ansible_virtualization_type != 'docker'
