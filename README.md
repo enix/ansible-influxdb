@@ -191,14 +191,14 @@ Still to do
 
 - Add SSL certificates Support
 - Add collectd input configuration
-- Add credentials configuration
+- Add credentials configuration / https://docs.influxdata.com/influxdb/v1.2/query_language/authentication_and_authorization
 - Add RedHat installation
 
 
 Changelog
 ---------
 
-### 0.1
+### 1.0
 
 Initial version.
 
