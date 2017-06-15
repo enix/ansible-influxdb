@@ -49,3 +49,5 @@
     name: influxdb
     enabled: yes
     state: started
+  # Disable this when running inside docker
+  when: ansible_virtualization_type != 'docker'
