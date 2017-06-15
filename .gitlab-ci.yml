@@ -7,6 +7,7 @@ variables:
   script:
     - ansible --version
     - ansible-galaxy install -v -r requirements.yml
+    - ansible -m setup localhost
     - ansible-playbook tests/test.yml --syntax-check
     - ansible-playbook -vvv --connection=local tests/test.yml
     - idempotence=$(mktemp)
