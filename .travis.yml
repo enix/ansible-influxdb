@@ -20,18 +20,18 @@ env:
     #   distribution_version: "6"
     #   init: /sbin/init
     #   run_opts: ""
-    # - distribution: Debian
-    #   distribution_version: stretch
-    #   init: /usr/local/bin/davedaemon
-    #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    - distribution: Debian
+      distribution_version: stretch
+      init: /lib/systemd/systemd
+      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
     - distribution: Debian
       distribution_version: jessie
       init: /lib/systemd/systemd
       run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    # - distribution: Debian
-    #   distribution_version: wheezy
-    #   init: /sbin/init
-    #   run_opts: ""
+    - distribution: Debian
+      distribution_version: wheezy
+      init: /sbin/init
+      run_opts: ""
     # - distribution: Fedora
     #   distribution_version: "24"
     #   init: /usr/lib/systemd/systemd

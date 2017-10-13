@@ -12,7 +12,7 @@ Supported targets:
 - Ubuntu 16.04 "Xenial"
 - Debian 7 "Wheezy"
 - Debian 8 "Jessie"
-
+- Debian 9 "Stretch"
 
 Role Variables
 --------------
@@ -160,7 +160,7 @@ influxdb__cqueries_run_interval: "1s"
 Dependencies
 ------------
 
-- None
+- eNiXHosting.influxdata-repo ansible role. Automatically pulled if you use ansible-galaxy.
 
 Usage
 -----
@@ -190,9 +190,10 @@ Still to do
 -----------
 
 - Add SSL certificates Support
-- Add collectd input configuration
-- Add credentials configuration / https://docs.influxdata.com/influxdb/v1.2/query_language/authentication_and_authorization
+- Add collectd input configuration, https://github.com/mtchavez/ansible-influxdb
+- Add credentials configuration, https://docs.influxdata.com/influxdb/v1.2/query_language/authentication_and_authorization
 - Add RedHat installation
+- Add task to create databases
 
 
 Changelog
