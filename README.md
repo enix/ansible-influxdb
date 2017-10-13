@@ -199,6 +199,9 @@ Still to do
 Changelog
 ---------
 
+### 1.1
+Add debian Stretch support
+
 ### 1.0
 
 Initial version.
